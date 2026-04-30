@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seguridad Vial Uniminuto</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #222;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #003087 0%, #0057d9 100%);
+      color: white;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .hero h1 span {
+      color: #ffd700;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: #ffd700;
+      color: #003087;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .hero-icon {
+      font-size: 4rem;
+      margin-bottom: 16px;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      border-bottom: 3px solid #e0e7ef;
+    }
+
+    .stat {
+      padding: 28px 40px;
+      text-align: center;
+      border-right: 1px solid #e0e7ef;
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0057d9;
+    }
+
+    .stat .label {
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 64px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: #003087;
+      font-weight: 800;
+    }
+
+    .section-title p {
+      color: #555;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,60,0.07);
+      border-top: 4px solid #0057d9;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,60,0.13);
+    }
+
+    .card .icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #003087;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ── DANGER SECTION ── */
+    .danger-section {
+      background: #fff5f5;
+      border-left: 6px solid #e53e3e;
+      padding: 64px 24px;
+    }
+
+    .danger-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .danger-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .danger-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #fed7d7;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .danger-item .icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .danger-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #c53030;
+      margin-bottom: 6px;
+    }
+
+    .danger-item p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* ── RULES SECTION ── */
+    .rules-section {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+      padding: 64px 24px;
+    }
+
+    .rules-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .rule-chip {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,60,0.07);
+      font-weight: 600;
+      font-size: 0.93rem;
+      color: #003087;
+    }
+
+    .rule-chip .icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* ── QUOTE BANNER ── */
+    .quote-banner {
+      background: #003087;
+      color: white;
+      text-align: center;
+      padding: 56px 24px;
+    }
+
+    .quote-banner blockquote {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto 16px;
+      line-height: 1.6;
+    }
+
+    .quote-banner cite {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ── COMMITMENT SECTION ── */
+    .commitment {
+      padding: 64px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .commitment h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: #003087;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .commitment p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .commitment-btn {
+      display: inline-block;
+      background: #003087;
+      color: white;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .commitment-btn:hover {
+      background: #0057d9;
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a2e;
+      color: #aaa;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.87rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .stat {
+        padding: 20px 24px;
+        border-right: none;
+        border-bottom: 1px solid #e0e7ef;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-icon">🚦</div>
+    <div class="badge">Comunidad Uniminuto</div>
+    <h1>Las normas de tránsito <span>salvan vidas</span> frente a nuestra universidad</h1>
+    <p>
+      Miles de estudiantes, docentes y vecinos transitan cada día frente a Uniminuto.
+      Respetar las normas de tránsito no es opcional — es un acto de responsabilidad social.
+    </p>
+    <a href="#compromiso" class="hero-cta">Quiero comprometerme</a>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="num">+12.000</div>
+      <div class="label">Personas que transitan<br>al frente cada semana</div>
+    </div>
+    <div class="stat">
+      <div class="num">3 de 4</div>
+      <div class="label">Accidentes viales son<br>evitables con normas</div>
+    </div>
+    <div class="stat">
+      <div class="num">80%</div>
+      <div class="label">De peatones en riesgo son<br>jóvenes universitarios</div>
+    </div>
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="label">Razones válidas para<br>ignorar una señal de tránsito</div>
+    </div>
+  </div>
+
+  <!-- POR QUÉ IMPORTA -->
+  <div class="section">
+    <div class="section-title">
+      <h2>¿Por qué importa especialmente aquí?</h2>
+      <p>El entorno de Uniminuto es único — alta densidad peatonal, entregas, motos y buses en un mismo punto.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h3>Alta concentración de peatones</h3>
+        <p>
+          Los horarios de entrada y salida de clases generan picos de tráfico peatonal extremos.
+          Un conductor distraído o que no respeta el semáforo pone en riesgo a decenas de personas a la vez.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">🛵</div>
+        <h3>Circulación mixta y caótica</h3>
+        <p>
+          Motos, bicicletas, buses y peatones comparten el mismo espacio. Sin normas claras respetadas,
+          el riesgo de colisión se multiplica exponencialmente.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">🏙️</div>
+        <h3>Zona de impacto social</h3>
+        <p>
+          Uniminuto forma ciudadanos comprometidos. Cómo nos comportamos en el tráfico frente a la universidad
+          refleja directamente los valores que la institución promueve.
+        </p>
+      </div>
+      <div class="card">
+        <div class="icon">👶</div>
+        <h3>Niños y adultos mayores</h3>
+        <p>
+          El barrio también es hogar de familias. Los más vulnerables — niños, adultos mayores y personas con
+          discapacidad — dependen de que todos respetemos las señales.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONSECUENCIAS -->
+  <div class="danger-section">
+    <div class="danger-inner">
+      <div class="section-title">
+        <h2 style="color:#c53030;">Consecuencias reales de romper las normas</h2>
+        <p style="color:#666;">No son solo multas. Las consecuencias afectan vidas, familias y a toda la comunidad.</p>
+      </div>
+      <div class="danger-list">
+        <div class="danger-item">
+          <div class="icon">💔</div>
+          <div>
+            <h4>Accidentes con víctimas</h4>
+            <p>Un solo segundo de imprudencia puede cambiar la vida de una persona para siempre — o quitársela.</p>
+          </div>
+        </div>
+        <div class="danger-item">
+          <div class="icon">💸</div>
+          <div>
+            <h4>Sanciones económicas</h4>
+            <p>Las multas en Colombia por infracciones de tránsito superan el salario mínimo diario. No vale la pena el "ahorro" de tiempo.</p>
+          </div>
+        </div>
+        <div class="danger-item">
+          <div class="icon">⚖️</div>
+          <div>
+            <h4>Responsabilidad legal</h4>
+            <p>Causar un accidente por irrespeto a las normas puede derivar en cargos penales, suspensión de licencia y demandas civiles.</p>
+          </div>
+        </div>
+        <div class="danger-item">
+          <div class="icon">😔</div>
+          <div>
+            <h4>Trauma psicológico</h4>
+            <p>Los involucrados en accidentes — víctimas y conductores — sufren secuelas emocionales que pueden durar años.</p>
+          </div>
+        </div>
+        <div class="danger-item">
+          <div class="icon">🌀</div>
+          <div>
+            <h4>Caos e impunidad</h4>
+            <p>Cuando uno infringe, otros lo imitan. Una pequeña infracción normaliza el desorden y degrada la convivencia de todos.</p>
+          </div>
+        </div>
+        <div class="danger-item">
+          <div class="icon">📉</div>
+          <div>
+            <h4>Daño a la imagen universitaria</h4>
+            <p>Los accidentes frente a Uniminuto afectan la percepción pública de la institución y de sus estudiantes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NORMAS CLAVE -->
+  <div class="rules-section">
+    <div class="rules-inner">
+      <div class="section-title">
+        <h2>Normas básicas que todos debemos cumplir</h2>
+        <p>Frente a Uniminuto — y en toda la ciudad.</p>
+      </div>
+      <div class="rules-grid">
+        <div class="rule-chip"><span class="icon">🔴</span> Respetar semáforos en rojo</div>
+        <div class="rule-chip"><span class="icon">🦓</span> Ceder el paso en cebras</div>
+        <div class="rule-chip"><span class="icon">🅿️</span> No parquear en zonas prohibidas</div>
+        <div class="rule-chip"><span class="icon">🏃</span> Usar andenes y pasos peatonales</div>
+        <div class="rule-chip"><span class="icon">📵</span> No usar el celular al conducir</div>
+        <div class="rule-chip"><span class="icon">🚗</span> Respetar límites de velocidad</div>
+        <div class="rule-chip"><span class="icon">🔊</span> No usar pito innecesariamente</div>
+        <div class="rule-chip"><span class="icon">🔄</span> Respetar sentidos viales</div>
+        <div class="rule-chip"><span class="icon">⛔</span> No invadir ciclovías</div>
+        <div class="rule-chip"><span class="icon">🛑</span> Detenerse en señales de PARE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote-banner">
+    <blockquote>
+      "La responsabilidad social empieza en los pequeños actos cotidianos.
+      Respetar un semáforo frente a Uniminuto es también construir el país que queremos."
+    </blockquote>
+    <cite>— Comunidad Académica Uniminuto</cite>
+  </div>
+
+  <!-- COMPROMISO -->
+  <div class="commitment" id="compromiso">
+    <h2>Tu compromiso hace la diferencia</h2>
+    <p>
+      No necesitas hacer grandes cosas para contribuir a la seguridad vial.
+      Basta con respetar las normas cada vez que transitas frente a nuestra universidad.
+      Ese acto, multiplicado por miles de estudiantes y ciudadanos, transforma el entorno.
+      <br><br>
+      Sé parte del cambio. Sé el ejemplo que otros necesitan ver.
+    </p>
+    <a href="#" class="commitment-btn">Me comprometo a respetar las normas 🤝</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      <strong>Responsabilidad Social Vial — Frente a Uniminuto</strong><br>
+      Campaña de sensibilización ciudadana &bull; 2026
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="section">
+  <div class="section-title">
+    <h2>¿Por qué importa especialmente aquí?</h2>
+    <p>El entorno de Uniminuto es único — alta densidad peatonal, entregas, motos y buses en un mismo punto.</p>
+  </div>
+  <div class="cards">
+    <div class="card" *ngFor="let card of cards">
+      <div class="icon">{{ card.icon }}</div>
+      <h3>{{ card.title }}</h3>
+      <p>{{ card.text }}</p>
+    </div>
+  </div>
+</div>

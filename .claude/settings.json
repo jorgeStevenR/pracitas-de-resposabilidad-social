@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\" -type f -name \"*.html\" -o -name \"*.jsx\" -o -name \"*.js\" -o -name \"*.tsx\" -o -name \"*.ts\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\")",
+      "Bash(find \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\src\" -type f \\\\\\( -name \"*.ts\" -o -name \"*.tsx\" -o -name \"*.scss\" -o -name \"*.css\" \\\\\\))",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\src\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\src\\\\\\\\app\\\\\\\\components\")",
+      "Bash(find \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\src\\\\\\\\app\\\\\\\\components\" -name \"*.html\")",
+      "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\public\")",
+      "Bash(grep -r \"import\\\\|require\" \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\src\\\\\\\\app\" --include=\"*.ts\")",
+      "Bash(npx ng *)"
+    ]
+  }
+}

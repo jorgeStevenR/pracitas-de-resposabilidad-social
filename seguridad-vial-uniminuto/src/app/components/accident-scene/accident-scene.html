@@ -1,0 +1,90 @@
+<section class="accident-scene" #sceneRef>
+
+  <div class="ac-header">
+    <span class="badge-edu">⚠️ Escena Educativa</span>
+    <h2>Un segundo puede cambiar todo</h2>
+    <p>Así ocurren los accidentes cuando no se respetan las señales de tránsito</p>
+  </div>
+
+  <div class="stage" [class.running]="animating">
+
+    <!-- Fondo: cielo y edificios -->
+    <div class="sky-layer">
+      <div class="bldg b1"></div>
+      <div class="bldg b2"></div>
+      <div class="bldg b3"></div>
+      <div class="bldg b4"></div>
+      <div class="tree-emoji">🌳</div>
+      <div class="tree-emoji t2">🌳</div>
+      <div class="sign">🚸</div>
+      <!-- Edificios Uniminuto (alineados sobre la cebra) -->
+      <div class="bldg uni-a"><div class="uni-logo">U</div></div>
+      <div class="bldg uni-b"><div class="uni-logo">U</div></div>
+      <div class="bldg uni-c"><div class="uni-logo">U</div></div>
+    </div>
+
+    <!-- Andén superior -->
+    <div class="sidewalk-top"></div>
+
+    <!-- Calzada -->
+    <div class="road-layer">
+      <div class="lane-dashes">
+        <div class="dash"></div>
+        <div class="dash"></div>
+        <div class="dash"></div>
+        <div class="dash"></div>
+        <div class="dash"></div>
+        <div class="dash"></div>
+        <div class="dash"></div>
+        <div class="dash"></div>
+        <div class="dash"></div>
+      </div>
+      <div class="crosswalk">
+        <div class="cw-stripe"></div>
+        <div class="cw-stripe"></div>
+        <div class="cw-stripe"></div>
+        <div class="cw-stripe"></div>
+        <div class="cw-stripe"></div>
+      </div>
+    </div>
+
+    <!-- Andén inferior -->
+    <div class="sidewalk-bot"></div>
+
+    <!-- Semáforos (uno a cada lado del paso cebra) -->
+    <div class="semaforo sem-izq">
+      <div class="sem-caja">
+        <div class="sem-luz rojo"></div>
+        <div class="sem-luz amarillo"></div>
+        <div class="sem-luz verde"></div>
+      </div>
+      <div class="sem-poste"></div>
+    </div>
+    <div class="semaforo sem-der">
+      <div class="sem-caja">
+        <div class="sem-luz rojo"></div>
+        <div class="sem-luz amarillo"></div>
+        <div class="sem-luz verde"></div>
+      </div>
+      <div class="sem-poste"></div>
+    </div>
+
+    <!-- Personajes animados -->
+    <div class="char moto">🏍️</div>
+    <div class="char ped">🚶</div>
+    <div class="char burst">💥</div>
+
+    <!-- Texto de impacto -->
+    <div class="impact-label">¡ACCIDENTE!</div>
+
+    <!-- Overlay rojo flash -->
+    <div class="flash-overlay"></div>
+
+  </div>
+
+  <div class="stat-banner">
+    <p>🚨 En Colombia, <strong>18 personas</strong> mueren cada día en accidentes de tránsito</p>
+    <p>Respetar las señales no es opcional &mdash; <strong>es cuestión de vida o muerte</strong></p>
+  </div>
+
+</section>

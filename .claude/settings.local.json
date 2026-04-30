@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"c:\\\\Users\\\\rodri\\\\Documents\\\\pracitas de resposabilidad social\\\\index.html\")",
+      "Bash(npm --version)",
+      "Bash(ng version *)",
+      "Bash(ng new *)",
+      "Bash(ng generate *)",
+      "Bash(ng serve *)"
+    ]
+  }
+}

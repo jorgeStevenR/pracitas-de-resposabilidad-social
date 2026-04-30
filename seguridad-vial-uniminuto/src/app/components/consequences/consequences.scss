@@ -1,0 +1,29 @@
+.danger-section {
+  background: #fff5f5;
+  border-left: 6px solid #e53e3e;
+  padding: 64px 24px;
+  @media (max-width: 600px) { padding: 40px 16px; border-left: none; border-top: 6px solid #e53e3e; }
+}
+.danger-inner { max-width: 1100px; margin: 0 auto; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 32px;
+  h2 { font-size: clamp(1.4rem, 3vw, 2rem); color: #c53030; font-weight: 800; }
+  p { color: #666; margin-top: 10px; font-size: 1rem; }
+}
+
+.danger-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+
+.danger-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #fed7d7;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  .icon { font-size: 1.8rem; flex-shrink: 0; }
+  h4 { font-size: 1rem; font-weight: 700; color: #c53030; margin-bottom: 6px; }
+  p { font-size: 0.88rem; color: #666; line-height: 1.5; margin: 0; }
+}
