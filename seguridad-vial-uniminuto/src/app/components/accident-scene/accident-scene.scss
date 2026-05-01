@@ -19,6 +19,13 @@ $ped-left: 58%;
 .ac-header {
   margin-bottom: 2rem;
 
+  .ac-semaforo {
+    font-size: 3.2rem;
+    display: block;
+    margin-bottom: 0.6rem;
+    animation: semGlow 1.3s ease-in-out infinite alternate;
+  }
+
   .badge-edu {
     display: inline-block;
     background: #fff3cd;
@@ -366,6 +373,11 @@ $ped-left: 58%;
   34%      { opacity: 0.65; }
   38%      { opacity: 0; }
   100%     { opacity: 0; }
+}
+
+@keyframes semGlow {
+  from { filter: drop-shadow(0 0 4px rgba(220, 30, 30, 0.3));  transform: scale(1); }
+  to   { filter: drop-shadow(0 0 18px rgba(220, 30, 30, 0.85)); transform: scale(1.06); }
 }
 
 // ─── Semáforos ────────────────────────────────────────────────────────────────

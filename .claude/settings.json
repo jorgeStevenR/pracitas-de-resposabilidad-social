@@ -9,7 +9,9 @@
       "Bash(find \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\src\\\\\\\\app\\\\\\\\components\" -name \"*.html\")",
       "Bash(ls -la \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\public\")",
       "Bash(grep -r \"import\\\\|require\" \"c:\\\\\\\\Users\\\\\\\\rodri\\\\\\\\Documents\\\\\\\\pracitas de resposabilidad social\\\\\\\\seguridad-vial-uniminuto\\\\\\\\src\\\\\\\\app\" --include=\"*.ts\")",
-      "Bash(npx ng *)"
+      "Bash(npx ng *)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d['projects']['seguridad-vial-uniminuto']['architect']['build']['options'].get\\('assets',[]\\), indent=2\\)\\)\")",
+      "Bash(ffmpeg -version)"
     ]
   }
 }

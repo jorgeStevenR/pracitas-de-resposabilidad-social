@@ -7,11 +7,13 @@ import { AccidentScene } from './components/accident-scene/accident-scene';
 import { Rules } from './components/rules/rules';
 import { QuoteBanner } from './components/quote-banner/quote-banner';
 import { Commitment } from './components/commitment/commitment';
+import { Gallery } from './components/gallery/gallery';
+import { Team } from './components/team/team';
 import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Hero, StatsBar, WhyMatters, Consequences, AccidentScene, Rules, QuoteBanner, Commitment, Footer],
+  imports: [Hero, StatsBar, WhyMatters, Consequences, AccidentScene, Rules, QuoteBanner, Commitment, Gallery, Team, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
