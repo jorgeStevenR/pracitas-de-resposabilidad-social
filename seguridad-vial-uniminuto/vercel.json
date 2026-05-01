@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/seguridad-vial-uniminuto/browser",
+  "installCommand": "npm install",
+  "framework": null
+}
